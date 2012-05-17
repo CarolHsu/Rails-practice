@@ -11,8 +11,10 @@
          <td><%= link_to post.title, board_post_path(@board, post) %></td>
          <td><%= post.content %></td>
          <td>
-            <%= link_to 'Edit', edit_board_post_path(@board, post) %>
-            <%= link_to 'Delete', board_post_path(@board, post), :confirm => 'Are you sure', :method => :delete %>
+            <% if current_user && current_user.id == post.user_id %>
+               <%= link_to 'Edit', edit_board_post_path(@board, post) %>
+               <%= link_to 'Delete', board_post_path(@board, post), :confirm => 'Are you sure', :method => :delete %>
+            <% end %>
          </td>
       </tr>
    <% end %>
