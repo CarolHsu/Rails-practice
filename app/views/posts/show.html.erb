@@ -1,0 +1,4 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+
+<%= link_to 'Back to list', board_posts_path(@board) %> | <%= link_to 'Edit this post', edit_board_post_path(@board, @post) %>

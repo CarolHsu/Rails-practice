@@ -1,0 +1,6 @@
+<h1>New board</h1>
+<%= form_for @board, :url => boards_path do |f| %>
+   <%= f.label :name, 'Board Name' %>
+   <%= f.text_field :name %>
+   <%= f.submit 'Create!' %>
+<% end %>

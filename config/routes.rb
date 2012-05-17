@@ -1,4 +1,32 @@
 Demo::Application.routes.draw do
+  get "posts/index"
+
+  get "posts/show"
+
+  get "posts/new"
+
+  get "posts/edit"
+
+  get "posts/create"
+
+  get "posts/update"
+
+  get "posts/destroy"
+
+  get "boards/index"
+
+  get "boards/show"
+
+  get "boards/new"
+
+  get "boards/edit"
+
+  get "boards/create"
+
+  get "boards/update"
+
+  get "boards/destroy"
+
    resources :boards do
       resources :posts
    end
