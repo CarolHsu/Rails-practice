@@ -1,31 +1,7 @@
 Demo::Application.routes.draw do
-  get "posts/index"
+  devise_for :users
 
-  get "posts/show"
-
-  get "posts/new"
-
-  get "posts/edit"
-
-  get "posts/create"
-
-  get "posts/update"
-
-  get "posts/destroy"
-
-  get "boards/index"
-
-  get "boards/show"
-
-  get "boards/new"
-
-  get "boards/edit"
-
-  get "boards/create"
-
-  get "boards/update"
-
-  get "boards/destroy"
+   root :to => 'boards#index'
 
    resources :boards do
       resources :posts

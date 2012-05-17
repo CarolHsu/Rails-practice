@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_filter :find_board
+  before_filter :authenticate_user!, :except => [:index, :show]
   def index
      redirect_to board_path(@board)
   end
