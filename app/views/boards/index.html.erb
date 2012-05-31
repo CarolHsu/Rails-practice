@@ -1,18 +1,28 @@
-<h1>Forum HomePage</h1>
+<h1>Listing boards</h1>
+
 <table>
    <tr>
-      <th>ID</th><th>Issue</th><th>management</th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
    </tr>
+
    <% @boards.each do |board| %>
       <tr>
-         <td><%= board.id %></td>
-         <td><%= link_to board.name, board_path(board) %></td>
-         <td>
-            <%= link_to 'Edit', edit_board_path(board) %>
-            <%= link_to 'Delete', board_path(board), :confirm => 'Are you sure?', :method => :delete %>
-         </td>
+         <td><%= board.name %></td>
+         <td><%= link_to 'Show', board %></td>
+         <% if current_user && current_user.is_admin %>
+            <td><%= link_to 'A-Edit', edit_admin_board_path(board) %></td>
+            <td><%= link_to 'A-Destroy', admin_boards_path, :confirm => 'Are you sure', :method => :delete %></td>
+         <% end %>
       </tr>
    <% end %>
+
 </table>
 
-<%= link_to 'New board', new_board_path %>
+<br />
+
+<% if current_user && current_user.is_admin? %>
+   <%= link_to 'A-New Board', new_admin_board_path %>
+<% end %>
