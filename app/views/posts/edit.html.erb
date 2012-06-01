@@ -1,8 +1,12 @@
 <h1>Edit Post</h1>
-<%= form_for @post, :url => board_post_path(@board, @post) do |f| %>
+<%= form_for @post, :url => board_post_path(@board, @post), :html => {:multipart => true} do |f| %>
    <%= f.label :title, 'Post Title' %>
    <%= f.text_field :title %>
    <%= f.label :content, 'Post Content' %>
    <%= f.text_area :content %>
    <%= f.submit 'Update!' %>
+   <div class = "field">
+      <%= f.label :upload_image %><br />
+      <%= f.file_field :excerpt_image %>
+   </div>
 <% end %>
