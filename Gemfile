@@ -40,3 +40,5 @@ gem 'jquery-rails'
 gem 'therubyracer'
 
 gem 'devise'
+
+gem 'will_paginate'

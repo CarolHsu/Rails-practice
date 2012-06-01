@@ -2,6 +2,6 @@
 <p><%= @post.content %></p>
 
 <%= link_to 'Back to list', board_posts_path(@board) %> | 
-<% if current_user && post.user_id == current_user.id %>
+<% if current_user && @post.user_id == current_user.id %>
    <%= link_to 'Edit this post', edit_board_post_path(@board, @post) %>
 <% end %>
